@@ -1,0 +1,8 @@
+#  NodeJS REPL ? (Read Eval Print Loop)
+-> The REPL feature of Node is very useful in experimenting with Node.js codes and to debug JavaScript codes.
+
+R -> READ -> Reads user's input, parses the input into JavaScript data-structure, and stores in memory.
+E -> EVAL -> Takes and evaluates the data structure.
+P -> PRINT -> Prints the result.
+L -> LOOP -> Loops the above command until the user presses Ctrl-c twice.
+
