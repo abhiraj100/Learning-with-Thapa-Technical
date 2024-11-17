@@ -2,6 +2,8 @@
 Node.js is a Javascript runtime (environment) built on Chrome's V8 javascript engine.
 Node.js is a Javascript running on the server.
 Node.js is a free, open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript code outside of a web browser.
+Run JavaScript Everywhere
+Node.js® is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.
 
 *** Nodejs is not a language or not a framework nor a library.
 
@@ -24,3 +26,6 @@ In 1995 Netscape written a program called Netscape Enterprise Server which allow
 I/O bound
 Data Streaming Applications
 Real time chat Applications
+
+*# node -v
+*# npm -v (node package manager)
