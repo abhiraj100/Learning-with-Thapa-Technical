@@ -1,0 +1,26 @@
+* What is Node JS ?
+Node.js is a Javascript runtime (environment) built on Chrome's V8 javascript engine.
+Node.js is a Javascript running on the server.
+Node.js is a free, open-source, cross-platform JavaScript runtime environment that allows developers to run JavaScript code outside of a web browser.
+
+*** Nodejs is not a language or not a framework nor a library.
+
+* History of Nodejs?
+In 2009 an idea came in the mind of Ryan Dahl (Google Engineer) that why not run javascript outside the browser, so he took V8 engine and embedded in a C++ program and called it Node.exe later on became Nodejs.
+
+
+* Javascript is the client-side scripting language.
+* V8 Javascript engine -> built for Google Chrome -> Just-In-Time Compiler -> No interpreter
+
+** Google -> javascript engine name is -> V8 engine
+** Firefox -> javascript engine name is -> Spider Monkey engine
+** Safari -> javascript engine name is -> Nitro engine
+
+
+# JS-Server Fun Fact 
+In 1995 Netscape written a program called Netscape Enterprise Server which allowed Developer to run Javascript at server side. -> but it's not much success
+
+# When to use Nodejs? -> Single threaded -> multiple request
+I/O bound
+Data Streaming Applications
+Real time chat Applications
