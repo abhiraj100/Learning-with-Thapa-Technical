@@ -1,0 +1,15 @@
+{
+  "name": "08_npmmod",
+  "version": "1.0.0",
+  "description": "practicing the npm module",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "abhiraj yadav",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "validator": "^13.12.0"
+  }
+}
