@@ -2,7 +2,7 @@
   "name": "08_npmmod",
   "version": "1.0.0",
   "description": "practicing the npm module",
-  "main": "index.mjs",
+  "main": "index2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
