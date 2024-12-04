@@ -34,8 +34,6 @@ fs.readFile("13_jsonNodejs/json1.json", "utf-8", (err, data) => {
     console.log(originalData);  // In Object form Data
 });
 
-
-
 // {"name":"abhiraj yadav","age":22,"channel":"thapa technical"}
 // { name: 'abhiraj yadav', age: 22, channel: 'thapa technical' }
 
