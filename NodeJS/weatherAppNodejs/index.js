@@ -1,34 +1,35 @@
-require('dotenv').config(); // Load environment variables from a .env file
+// require('dotenv').config(); // Load environment variables from .env file
 const http = require("http");
 const fs = require("fs");
 const requests = require("requests");
 
-// Read the home.html file synchronously
+// Read the `home.html` file synchronously
 const homeFile = fs.readFileSync("home.html", "utf-8");
 
 // Function to replace placeholders with actual API data
 const replacePlaceholders = (template, data) => {
-  let output = template.replace("{%tempval%}", data.main.temp);
-  output = output.replace("{%tempmin%}", data.main.temp_min);
-  output = output.replace("{%tempmax%}", data.main.temp_max);
-  output = output.replace("{%location%}", data.name);
-  output = output.replace("{%country%}", data.sys.country);
-  output = output.replace("{%tempstatus%}", data.weather[0].main);
+  let output = template.replace(`${tempval}`, data.main.temp);
+  output = output.replace(`${tempmin}`, data.main.temp_min);
+  output = output.replace(`${tempmax}`, data.main.temp_max);
+  output = output.replace(`${location}`, data.name);
+  output = output.replace(`${country}`, data.sys.country);
+  output = output.replace(`${tempstatus}`, data.weather[0].main);
+  console.log(output)
   return output;
 };
 
 // Create the server
 const server = http.createServer((req, res) => {
   if (req.url === "/") {
-    const weatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=Bhopal,IN&units=metric&appid=${process.env.APPID}`;
-    
+    const weatherAPI = `https://api.openweathermap.org/data/2.5/weather?q=Bhopal,IN&units=metric&appid=d9b8cd2f07a135964b06752e8db0bff0`;
+
     requests(weatherAPI)
       .on("data", (chunk) => {
         try {
-          const weatherData = JSON.parse(chunk);
-          const finalHTML = replacePlaceholders(homeFile, weatherData);
+          const weatherData = JSON.parse(chunk); // Parse API response
+          const finalHTML = replacePlaceholders(homeFile, weatherData); // Replace placeholders
           res.writeHead(200, { "Content-Type": "text/html" });
-          res.end(finalHTML);
+          res.end(finalHTML); // Respond with the final HTML
         } catch (error) {
           console.error("Error processing weather data:", error);
           res.writeHead(500, { "Content-Type": "text/plain" });
@@ -43,7 +44,6 @@ const server = http.createServer((req, res) => {
         }
       });
   } else {
-    // Handle 404 errors
     res.writeHead(404, { "Content-Type": "text/plain" });
     res.end("404: Page Not Found");
   }
@@ -53,6 +53,7 @@ const server = http.createServer((req, res) => {
 server.listen(8000, "127.0.0.1", () => {
   console.log("Server running at http://127.0.0.1:8000/");
 });
+
 
 
 
