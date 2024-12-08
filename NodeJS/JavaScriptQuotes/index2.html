@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Quotes App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inner" data-aos="zoom-in">
+            <div class="box">
+                <p class="number">
+                    <img src="images/logo.png" alt="Tweet Me" title="Tweet Me" id="tweetMe" />
+                </p>
+                <div class="text">
+                    <i class="start-quote fas fa-quote-left"></i>
+                    <p id="quotes" class="quote">Loading quote...</p>
+                    <p id="author" class="author">- Author</p>
+                </div>
+                <button id="newQuotes" class="button">New Quote</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+
+        const quotes = document.getElementById("quotes");
+        const author = document.getElementById("author");
+        const newQuotes = document.getElementById("newQuotes");
+        const tweetMe = document.getElementById("tweetMe");
+
+        let realData = [];
+        let quotesData = {};
+
+        // Tweet Function
+        const tweetNow = () => {
+            const tweetPost = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                `${quotesData.text} - ${quotesData.author || "Unknown"}`
+            )}`;
+            window.open(tweetPost, "_blank");
+        };
+
+        // Fetch a New Quote
+        const getNewQuotes = () => {
+            const rnum = Math.floor(Math.random() * realData.length);
+            quotesData = realData[rnum];
+            quotes.innerText = quotesData.text || "No quote found.";
+            author.innerText = quotesData.author || "Unknown";
+        };
+
+        // Fetch Quotes from API
+        const getQuotes = async () => {
+            const api = "https://type.fit/api/quotes";
+            try {
+                const response = await fetch(api);
+                if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+                realData = await response.json();
+                console.log("Fetched Quotes: ", realData); // Debug log
+                getNewQuotes();
+            } catch (error) {
+                console.error("API Fetch Error: ", error);
+                quotes.innerText = "Failed to load quotes. Try again later.";
+                author.innerText = "";
+            }
+        };
+
+        // Initialize App
+        document.addEventListener("DOMContentLoaded", () => {
+            tweetMe.addEventListener("click", tweetNow);
+            newQuotes.addEventListener("click", getNewQuotes);
+            getQuotes();
+        });
+    </script>
+</body>
+</html>
