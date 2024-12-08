@@ -7,3 +7,18 @@ Express.JS is a web application framework that provides you with a simple API to
 ## Why do we actually need Express.js? How it is useful for us to use with Node.js?
 
 Try to write a small REST API server in plain Node.js (that is, using only core modules) and then in Express.js. The latter will take you 5-10x less time and lines of code.
+
+Express.js is a lightweight and flexible web application framework for Node.js. It simplifies building web servers and APIs by providing robust features like routing, middleware management, and request handling.
+
+Uses of Express.js:
+Web Servers: Create server-side applications and REST APIs.
+Routing: Define multiple routes for different URL paths and HTTP methods.
+Middleware: Handle requests, responses, and error management efficiently.
+API Development: Build scalable backend services for web and mobile apps.
+Real-Time Apps: Use with WebSocket libraries for real-time features like chat apps.
+
+Scalability:
+The ability of a system or application to handle more users, data, or traffic as it grows by adding resources like servers, storage, or processing power. In Express.js, scalability means it can manage increasing web requests efficiently.
+
+Compatibility:
+The ability of a system or application to work well with other technologies, tools, or platforms. Express.js is compatible with databases like MongoDB, front-end frameworks like React.js, and cloud services like AWS.
