@@ -1,0 +1,8 @@
+A template engine enables you to use static template files in your application. At runtime, the template engine replaces variables in a template file with actual values, and transforms into an HTML file sent to the client. This approach makes it easier to design and HTML page.
+
+Some popular template engines that work with Express are Pug, Mustache, and EJS.
+The Express application generator uses Jade as its default, but it also supports several object.
+
+## EJS -> Embedded JavaScript Templates
+
+we use Template Engines to deal with the dynamic data in express.
