@@ -68,6 +68,8 @@ app.get("/about/*", (req, res) => {
     });
 });
 
+
+// it must be in the last
 app.get("*", (req, res) => {
     res.render("404", {
         errorcomment: "Oops page couldn't be found",
