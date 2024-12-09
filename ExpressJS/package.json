@@ -9,6 +9,7 @@
   "author": "abhiraj yadav",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "hbs": "^4.2.0"
   }
 }
