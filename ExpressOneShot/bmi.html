@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        font-family: "Poppins", serif;
+      }
+
+      .centerdiv {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="centerdiv">
+      <h1>BMI Calculator</h1>
+      <br />
+      <!-- <form method="post" action="index.html"> -->
+      <form method="post">
+        <input type="text" name="weight" placeholder="Enter your weight" />
+        <br />
+        <input type="text" name="height" placeholder="Enter your height" />
+        <br />
+        <button type="submit">Calculate</button>
+      </form>
+    </div>
+  </body>
+</html>
