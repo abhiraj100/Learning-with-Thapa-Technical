@@ -37,11 +37,14 @@ app.get("/contact", (req, res) => {
 
 // console.log(process);
 
+// echo $env:PORT  => to check port no.
+// Remove-Item env:\PORT => to remove the port no.
+
 // const PORT = 3000;
 // 1 - way (in powershell) -->  $env.PORT=3000; npm run dev
 // const PORT = process.env.PORT;   
 
-// 2 - way (in cmd) --> set PORT=3001 &&s npm run dev/ node --watch app.js
+// 2 - way (in cmd) --> set PORT=3001 && npm run dev/ node --watch app.js
 const PORT = process.env.PORT || 3000;   
 app.listen(PORT, () => {
     console.log(`Server is listening at PORT : ${PORT}`);
