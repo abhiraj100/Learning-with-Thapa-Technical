@@ -35,7 +35,14 @@ app.get("/contact", (req, res) => {
     </div>`)
 })
 
-const PORT = 3000;
+// console.log(process);
+
+// const PORT = 3000;
+// 1 - way (in powershell) -->  $env.PORT=3000; npm run dev
+// const PORT = process.env.PORT;   
+
+// 2 - way (in cmd) --> set PORT=3001 &&s npm run dev/ node --watch app.js
+const PORT = process.env.PORT || 3000;   
 app.listen(PORT, () => {
     console.log(`Server is listening at PORT : ${PORT}`);
 })
