@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Arima+Madurai:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arima Madurai', cursive;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: white;
+    display: flex;
+    background-color: #363636;
+}
+
+.text-section {
+    width: 50%;
+    height: 100vh;
+    
+}

@@ -26,23 +26,23 @@
       <ul id="shortened-urls"></ul>
     </div>
     <script>
+      const fetchShortenedURL = async () => {
+        const response = await fetch("/links");
+        const links = await response.json();
+        console.log("links", links);
 
-        const fetchShortenedURL = async () => {
-            const response = await fetch("/links");
-            const links = await response.json();
-            console.log("links", links);
-            
-            const list = document.getElementById("shortened-urls");
-            list.innerHTML = "";
+        const list = document.getElementById("shortened-urls");
+        list.innerHTML = "";
 
-            for(const [shortCode, url] of Object.entries(links)){
-                const li = document.createElement("li");
-                const truncatedURL = url.length >= 30 ? `${url.slice(0, 30)}...` : url;
-                // li.innerHTML = `<a href="/${shortCode}" target="_blank"> ${window.location.origin}/${shortCode} </a>  -> ${url}`
-                li.innerHTML = `<a href="/${shortCode}" target="_blank"> ${window.location.origin}/${shortCode} </a>  -> ${truncatedURL}`
-                list.appendChild(li);
-            }
+        for (const [shortCode, url] of Object.entries(links)) {
+          const li = document.createElement("li");
+          const truncatedURL =
+            url.length >= 30 ? `${url.slice(0, 30)}...` : url;
+          // li.innerHTML = `<a href="/${shortCode}" target="_blank"> ${window.location.origin}/${shortCode} </a>  -> ${url}`
+          li.innerHTML = `<a href="/${shortCode}" target="_blank"> ${window.location.origin}/${shortCode} </a>  -> ${truncatedURL}`;
+          list.appendChild(li);
         }
+      };
 
       document
         .getElementById("shorten-form")
@@ -58,9 +58,9 @@
           try {
             console.log("xyz");
             const response = await fetch("/shorten", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ url, shortCode }),
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ url, shortCode }),
             });
             console.log("xyz 2");
 
@@ -75,11 +75,13 @@
             }
           } catch (error) {
             console.error("Fetch Error:", error.message); // Log fetch errors
-            alert("An error occurred while submitting the form. Please try again.");
+            alert(
+              "An error occurred while submitting the form. Please try again."
+            );
           }
         });
 
-        fetchShortenedURL();
+      fetchShortenedURL();
     </script>
   </body>
 </html>
